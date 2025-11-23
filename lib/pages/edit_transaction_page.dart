@@ -191,10 +191,7 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                   ),
                   child: Text(
                     widget.transaction.buyerName,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
+                    style: const TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -210,7 +207,10 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                      borderSide: const BorderSide(
+                        color: Color(0xFF21004B),
+                        width: 2,
+                      ),
                     ),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -245,7 +245,10 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                      borderSide: const BorderSide(
+                        color: Color(0xFF21004B),
+                        width: 2,
+                      ),
                     ),
                   ),
                 ),
@@ -301,7 +304,10 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -309,7 +315,10 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -320,7 +329,9 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                         if (value.length < 6) {
                           return 'Prescription number must be at least 6 characters';
                         }
-                        if (!RegExp(r'^(?=.*[a-zA-Z])(?=.*[0-9])').hasMatch(value)) {
+                        if (!RegExp(
+                          r'^(?=.*[a-zA-Z])(?=.*[0-9])',
+                        ).hasMatch(value)) {
                           return 'Prescription number must contain letters and numbers';
                         }
                       }
@@ -343,10 +354,7 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                       children: [
                         const Text(
                           'Total Price',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
+                          style: TextStyle(fontSize: 14, color: Colors.grey),
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -369,7 +377,10 @@ class _EditTransactionPageState extends State<EditTransactionPage> {
                         child: OutlinedButton(
                           onPressed: () => Navigator.pop(context),
                           style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: Color(0xFF21004B), width: 2),
+                            side: const BorderSide(
+                              color: Color(0xFF21004B),
+                              width: 2,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),

@@ -29,10 +29,7 @@ class MainPage extends StatelessWidget {
                   children: [
                     const Text(
                       'Hello,',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white70,
-                      ),
+                      style: TextStyle(fontSize: 16, color: Colors.white70),
                     ),
                     const SizedBox(height: 4),
                     Text(
@@ -92,7 +89,8 @@ class MainPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PurchaseHistoryPage(user: user),
+                                builder: (context) =>
+                                    PurchaseHistoryPage(user: user),
                               ),
                             );
                           },
@@ -172,11 +170,7 @@ class MainPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              icon,
-              size: 40,
-              color: const Color(0xFF21004B),
-            ),
+            Icon(icon, size: 40, color: const Color(0xFF21004B)),
             const SizedBox(height: 12),
             Text(
               title,
@@ -234,10 +228,7 @@ class MainPage extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     medicine.category,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey,
-                    ),
+                    style: const TextStyle(fontSize: 12, color: Colors.grey),
                   ),
                   const SizedBox(height: 8),
                   Text(
@@ -258,10 +249,8 @@ class MainPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PurchaseFormPage(
-                        user: user,
-                        medicine: medicine,
-                      ),
+                      builder: (context) =>
+                          PurchaseFormPage(user: user, medicine: medicine),
                     ),
                   );
                 },

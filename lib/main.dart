@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pharmacy App',
+      title: 'Rif\'at Pharmacy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF21004B),

@@ -57,70 +57,56 @@ class MainPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    GridView.count(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 16,
-                      crossAxisSpacing: 16,
-                      childAspectRatio: 1.3,
+                    Row(
                       children: [
-                        _buildMenuCard(
-                          context,
-                          icon: Icons.medical_services,
-                          title: 'Buy Medicine',
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PurchaseFormPage(
-                                  user: user,
-                                  medicine: null,
+                        Expanded(
+                          child: _buildMenuCard(
+                            context,
+                            icon: Icons.history,
+                            title: 'Purchase History',
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      PurchaseHistoryPage(user: user),
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
-                        _buildMenuCard(
-                          context,
-                          icon: Icons.history,
-                          title: 'Purchase History',
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    PurchaseHistoryPage(user: user),
-                              ),
-                            );
-                          },
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: _buildMenuCard(
+                            context,
+                            icon: Icons.person,
+                            title: 'Profile',
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ProfilePage(user: user),
+                                ),
+                              );
+                            },
+                          ),
                         ),
-                        _buildMenuCard(
-                          context,
-                          icon: Icons.person,
-                          title: 'Profile',
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfilePage(user: user),
-                              ),
-                            );
-                          },
-                        ),
-                        _buildMenuCard(
-                          context,
-                          icon: Icons.logout,
-                          title: 'Logout',
-                          onTap: () {
-                            Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginPage(),
-                              ),
-                              (route) => false,
-                            );
-                          },
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: _buildMenuCard(
+                            context,
+                            icon: Icons.logout,
+                            title: 'Logout',
+                            onTap: () {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const LoginPage(),
+                                ),
+                                (route) => false,
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),

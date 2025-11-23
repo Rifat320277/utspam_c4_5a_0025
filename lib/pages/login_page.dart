@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 160),
                   const Text(
                     'Welcome Back',
                     style: TextStyle(

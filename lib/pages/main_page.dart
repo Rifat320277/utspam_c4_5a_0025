@@ -63,7 +63,7 @@ class MainPage extends StatelessWidget {
                           child: _buildMenuCard(
                             context,
                             icon: Icons.history,
-                            title: 'Purchase History',
+                            title: 'History',
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -153,6 +153,7 @@ class MainPage extends StatelessWidget {
           border: Border.all(color: const Color(0xFF21004B), width: 2),
           borderRadius: BorderRadius.circular(16),
         ),
+        padding: EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -26,7 +26,9 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
 
   Future<void> _loadTransactions() async {
     setState(() => _isLoading = true);
-    final transactions = await DatabaseHelper.instance.getTransactionsByUserId(widget.user.id!);
+    final transactions = await DatabaseHelper.instance.getTransactionsByUserId(
+      widget.user.id!,
+    );
     setState(() {
       _transactions = transactions;
       _isLoading = false;
@@ -51,48 +53,41 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
       ),
       body: _isLoading
           ? const Center(
-              child: CircularProgressIndicator(
-                color: Color(0xFF21004B),
-              ),
+              child: CircularProgressIndicator(color: Color(0xFF21004B)),
             )
           : _transactions.isEmpty
-              ? Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.history,
-                        size: 80,
-                        color: Colors.grey[300],
-                      ),
-                      const SizedBox(height: 16),
-                      Text(
-                        'No purchase history',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                    ],
+          ? Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.history, size: 80, color: Colors.grey[300]),
+                  const SizedBox(height: 16),
+                  Text(
+                    'No purchase history',
+                    style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                   ),
-                )
-              : RefreshIndicator(
-                  color: const Color(0xFF21004B),
-                  onRefresh: _loadTransactions,
-                  child: ListView.builder(
-                    padding: const EdgeInsets.all(24),
-                    itemCount: _transactions.length,
-                    itemBuilder: (context, index) {
-                      final transaction = _transactions[index];
-                      return _buildTransactionCard(transaction);
-                    },
-                  ),
-                ),
+                ],
+              ),
+            )
+          : RefreshIndicator(
+              color: const Color(0xFF21004B),
+              onRefresh: _loadTransactions,
+              child: ListView.builder(
+                padding: const EdgeInsets.all(24),
+                itemCount: _transactions.length,
+                itemBuilder: (context, index) {
+                  final transaction = _transactions[index];
+                  return _buildTransactionCard(transaction);
+                },
+              ),
+            ),
     );
   }
 
   Widget _buildTransactionCard(model.Transaction transaction) {
-    final date = DateFormat('dd MMM yyyy, HH:mm').format(DateTime.parse(transaction.purchaseDate));
+    final date = DateFormat(
+      'dd MMM yyyy, HH:mm',
+    ).format(DateTime.parse(transaction.purchaseDate));
     final isCancelled = transaction.status == 'Cancelled';
 
     return InkWell(
@@ -130,12 +125,17 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: isCancelled ? Colors.grey : const Color(0xFF21004B),
+                      color: isCancelled
+                          ? Colors.grey
+                          : const Color(0xFF21004B),
                     ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: isCancelled
                         ? Colors.grey.withOpacity(0.1)
@@ -147,7 +147,9 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.bold,
-                      color: isCancelled ? Colors.grey : const Color(0xFF21004B),
+                      color: isCancelled
+                          ? Colors.grey
+                          : const Color(0xFF21004B),
                     ),
                   ),
                 ),
@@ -156,10 +158,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
             const SizedBox(height: 8),
             Text(
               transaction.medicineCategory,
-              style: const TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
+              style: const TextStyle(fontSize: 12, color: Colors.grey),
             ),
             const SizedBox(height: 12),
             Row(
@@ -170,10 +169,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                   children: [
                     const Text(
                       'Buyer',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey,
-                      ),
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
                     ),
                     const SizedBox(height: 2),
                     Text(
@@ -191,10 +187,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
                   children: [
                     const Text(
                       'Quantity',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey,
-                      ),
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
                     ),
                     const SizedBox(height: 2),
                     Text(
@@ -215,10 +208,7 @@ class _PurchaseHistoryPageState extends State<PurchaseHistoryPage> {
               children: [
                 Text(
                   date,
-                  style: const TextStyle(
-                    fontSize: 11,
-                    color: Colors.grey,
-                  ),
+                  style: const TextStyle(fontSize: 11, color: Colors.grey),
                 ),
                 Text(
                   'Rp ${transaction.totalPrice.toStringAsFixed(0)}',

@@ -53,9 +53,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
     if (emailExists) {
       setState(() => _isLoading = false);
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Email already exists')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Email already exists')));
       }
       return;
     }
@@ -74,9 +74,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
     setState(() => _isLoading = false);
 
     if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Registration successful')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Registration successful')));
       Navigator.pop(context);
     }
   }
@@ -106,10 +106,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 8),
                   const Text(
                     'Register to get started',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                   const SizedBox(height: 40),
                   TextFormField(
@@ -123,7 +120,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -131,7 +131,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -154,7 +157,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -162,7 +168,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -188,7 +197,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -196,7 +208,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -222,7 +237,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -230,7 +248,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -252,7 +273,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -260,7 +284,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
@@ -283,7 +310,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF21004B), width: 2),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF21004B),
+                          width: 2,
+                        ),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -291,7 +321,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       focusedErrorBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Colors.red, width: 2),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                          width: 2,
+                        ),
                       ),
                     ),
                     validator: (value) {
